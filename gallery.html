@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <link rel="stylesheet" href="slick.css">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+            /* --------------wrapper------------- */
+        .wrapper{
+            width: 100%;
+            height: 100vh;
+            font-family: serif;
+        }
+           /* ---------------header-------------- */
+        header{          
+            width: 100%;
+            height: 24em;
+            background-image: linear-gradient(rgba(0,0,0,0.80),rgba(0,0,0,0.80)),url(image/diamondringpics1.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        
+          /* ----------------logo--------------- */
+        .logo{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1em;    
+            /* font-family: sans-serif; */
+            background: #000;
+        }
+          /* --------------logo-animation------------- */
+        h2{
+            font-size: 2em;
+            color: #333;
+            font-weight: 500;
+        }
+        h2 span{
+            animation: animate 4s linear infinite;
+        }
+        h2 span:nth-child(1){
+            animation-delay: 0s;
+        }
+        h2 span:nth-child(2){
+            animation-delay: 2s;
+        }
+        h2 span:nth-child(3){
+            animation-delay: 4s;
+        }
+        h2 span:nth-child(4){
+            animation-delay: 6s;
+        }
+        h2 span:nth-child(5){
+            animation-delay: 8s;
+        }
+        h2 span:nth-child(6){
+            animation-delay: 10s;
+        }
+        @keyframes animate{
+            10%,100%{
+                color: wheat;
+                box-shadow: none;
+            }
+            100%{
+                color: rgb(209, 138, 7);
+                text-shadow: 0 0 10em #fff;
+                
+                text-shadow: 0 0 10em #fff;
+                text-shadow: 0 0 10em #fff;
+                text-shadow: 0 0 10em #fff;
+                text-shadow: 0 0 10em #fff;
+                text-shadow: 0 0 10em #fff;
+                text-shadow: 0 0 10em #fff;
+            }
+        }
+          /* --------------logo-email------------- */
+        .logo-email{
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .logo-email i{
+            color: orange;
+        }
+          /*-----------------navbar---------------- */
+        nav{
+           position: relative;
+           margin-top: 2em;
+           display: flex;
+           justify-content: center;
+        }
+        nav ul{
+            list-style: none;
+        }
+        nav ul li{
+            width: 7rem;
+            font-size: 20px;
+            line-height: 2rem;
+            text-align: center;
+            float: left;
+            position: relative;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: wheat;
+            display: block;
+            border-radius: 1em;
+        }
+        nav ul li a:hover{
+           background-color: rgb(89, 74, 52);
+       }
+       nav ul ul{
+           position: absolute;
+           display: none;
+       }
+       nav ul li:hover > ul{
+           display: block;
+        }
+        nav ul ul ul{
+           margin-left: 112px;
+           top: 0px;
+        }
+          /* --------------login------------- */
+          nav .login-form{
+           margin: 12px;
+           background-color: transparent;
+           color: wheat;
+           width: 12rem;
+           border: 1px solid white;
+           box-shadow: 0 2px 8px orange, 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        }
+        nav button{
+            padding: 6px;
+            margin: 12px;
+            width: 100px;
+            border-radius: 50px;
+            font-weight: bold;
+            border: 2px solid rgb(89, 74, 52);
+            background: transparent;
+            color: wheat;
+            cursor: pointer;
+        }
+        nav button:hover{
+            background-color: rgb(89, 74, 52);
+        }
+
+          /* ---------------------------gallery--------------------------- */
+
+        figcaption{
+            
+            background-color: black;
+            background-size: cover;
+            background-position: center;
+        }  
+
+        .gallery h2{
+            text-align: center;
+            font-size: bold;
+            font-size: 37px;
+            color: orange;
+            padding: 40px;
+        }
+
+        .gallery h3{
+            text-align: center;
+            color: wheat;
+            font-size: 40px;
+            padding-bottom: 40px;
+
+        }
+
+        .img-area{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        .single-img{
+            padding: 0 20px 35px;
+        }
+        img{
+            width: 300px;
+            height: 250px;
+            border: 1px solid white;
+            box-shadow: 0 2px 8px orange, 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        }
+        img:hover{
+            opacity: .5;
+            transition: .9s;
+        }  
+          
+           /* --------------left-side-social-media-icons------------- */
+        aside{
+            position: fixed;
+            margin-top: 50px;
+            width: 50px;
+            height: auto;
+            background: transparent;
+        }
+        .social-icons .fab{      
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-size: 20px;
+            color: #fff;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .social-icons button{
+            border: #fff;
+            border-radius: 50%;
+            background: #fff;
+            color: red;
+            text-align: center;
+            line-height: 40px;
+            font-size: 30px;
+            margin: 5px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+            /* --------------------------------socail-media-icon-map------------------------------ */
+            
+        .popup-overlay{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0, 0, 0.5);
+            display: none;
+        }
+        .popup{
+            position: fixed;
+            top: -150%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            background: #f5f5f5;
+            font-family: serif;
+            padding: 20px;
+        }
+        .popup .popup-close-btn{
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            background: #555;
+            padding: 10px;
+            border-radius: 10px;
+            color: #eee;
+            font-weight: 600px;
+            cursor: pointer;
+        }
+        .popup .popup-close-btn:hover{
+            background-color: red;
+        }
+        body.popup-active .popup{
+            top: 50%;
+        }
+        body.popup-active .popup-overlay{
+            display: block;
+        }
+       
+        .fa-youtube{
+            background: red;
+        }
+        .fa-facebook-f{
+            background: blue;
+        }
+        .fa-twitter{
+            background:  #388cc8;
+        }
+        .fa-whatsapp{
+            background: green;
+        }
+           
+           /* --------------(footer)-gold-current-rate------------- */
+           
+        footer{
+            background: #000;
+        }
+        marquee{
+            padding: 2em;
+            font-size: bold;
+            font-size: 30px;
+            color: orange;
+        }
+        .footer{
+            width: 85%;
+            margin: auto;
+            color: wheat;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+        .col{
+            flex-basis: 25%;
+            padding: 10px;
+        }
+        .col:nth-child(2),  .col:nth-child(3){
+            flex-basis: 15%;
+        }
+        .col h3{
+            width: fit-content;
+            margin-bottom: 40px;
+            position: relative;
+            color: wheat;
+        }
+        .email-id{
+            width: fit-content;
+            border-bottom: 1px solid wheat;
+            margin: 20px 0;
+        }
+        
+        ul li{
+            
+            list-style: none;
+            padding: auto;
+        }
+        ul li a{
+            text-decoration: none;
+            color: wheat;
+        }
+        .footer form{
+            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid wheat;
+            margin-bottom: 50px;
+        }
+        .footer form i{
+            color: wheat;
+        }
+        .footer form input{
+            width: 100%;
+            background: transparent;
+            color: wheat;
+            border: 0;
+            outline: none;
+        }
+        .footer form button{
+            background: transparent;
+            border: 0;
+            outline: none;
+            cursor: pointer;
+        }
+        .underline{
+            width: 100%;
+            height: 5px;
+            background-color: rgb(89, 74, 52);
+            border-radius: 3px;
+            position: absolute;
+            top: 25px;
+            left: 0;
+            overflow: hidden;
+        }
+        .underline span{
+            width: 15px;
+            height: 100%;
+            background: orange;
+            border-radius: 3px;
+            position: absolute;
+            top: 0;
+            left: 10px;
+            animation: moving 2s linear infinite;
+        }
+        @keyframes moving{
+            0%{
+                left: -20px;
+            }
+            100%{
+                left: 100%;
+            }
+        }
+         .copyright{
+            text-align: center;
+            padding-bottom: 20px;
+            color: orange;
+        }
+         hr{
+            width: 200px;
+            border: 0;
+            border-bottom: 1px solid wheat;
+            margin: 20px auto;
+        }
+        .time{
+            background-color: rgb(12, 12, 12);
+            color: wheat;
+            border: 1px solid white;
+            box-shadow: 0 2px 8px orange, 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+            padding: 2px;
+            text-align: center;
+            margin-left: auto;
+            width: 150px;
+        }
+        .hms{
+            font-size: 16px;
+            font-weight: 200;
+        }
+        .ampm{
+            font-size: 14px;
+        }
+        .date{
+            font-size: 14px;
+        }
+
+    </style>
+    </head>
+       <body>
+        <div class="wrapper">
+            <header>
+                <div class="logo">
+                    <h2>
+                        <span>A</span>
+                        <span>N</span>
+                        <span>S</span>
+                        <span>A</span>
+                        <span>R</span>
+                        <span>I</span>
+                        <span><i class="fa-brands fa-sketch"></i></span>
+                    </h2>
+                    <h2>Jewellers</h2>
+                </div>
+                
+                <div class="logo-email">
+                <form action="mailto:rizwanamdansari@gmail.com">
+                    <i class="far fa-envelope"></i>
+                    <input type="email" placeholder="Enter your email id" required>
+                    <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                </form>
+            </div>
+
+          <nav>
+                <ul>
+                    <li><a href="demowebsite.html" target="_blank" rel="noopener noreferrer">Home</a></li>
+                    <li><a href="aboutus.html" target="_blank" rel="noopener noreferrer">About</a></li>
+                    <li><a href="gallery.html" target="_blank" rel="noopener noreferrer">Gallery</a></li>
+                    <li><a href="#">Jewelries</a>
+                        <ul>
+                            <li><a href="#">Gold</a>
+                                <ul>
+                                    <li><a href="goldset.html" target="_blank" rel="noopener noreferrer">Set</a></li>
+                                    <li><a href="goldbangle.html" target="_blank" rel="noopener noreferrer">Bangles</a></li>
+                                    <li><a href="goldearrings.html" target="_blank" rel="noopener noreferrer"> Earrings</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Copper Gold</a>
+                                <ul>
+                                    <li><a href="coopergoldbangle.html" target="_blank" rel="noopener noreferrer">Bangles</a></li>
+                                    <li><a href="coopergoldrings.html" target="_blank" rel="noopener noreferrer">Rings</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Diamond</a>
+                                <ul>
+                                    <li><a href="diamondring.html" target="_blank" rel="noopener noreferrer">Rings</a></li>
+                                    <li><a href="diamondset.html" target="_blank" rel="noopener noreferrer">Set</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="faq.html" target="_blank" rel="noopener noreferrer">FAQ</a></li>
+                    <li><a href="signup.html" target="_blank" rel="noopener noreferrer">Sign Up</a></li>
+                    <li><a href="#">Login</a>
+                        <ul>
+                            <li><form class="login-form" action="booking.html">
+                                <label for="email">Email</label>
+                                <input type="email" placeholder="Enter Your Email" required>
+                                <span><i class="fa-solid fa-eye-slash" aria-hidden="true" id="eye" class="wallet" onclick="toggle()"></i></span>
+                                <label for="password">Strong Password</label>
+                                <input type="password" placeholder="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,} " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="wallet" id="password" required>
+                                <button type="submit">Login</button>
+                                
+                            </form></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- -------------------------------aside-social-media-icons----------------------------- -->
+
+            <aside>
+                <div class="social-icons">
+                    <button id="open-popup-btn"><i class="fa-solid fa-location-dot"></i></button>
+                    <div class="popup-overlay"></div>
+                    <div class="popup">
+                    <h1>Ocean Towers</h1>
+                    <p>Block 9 Clifton Do Talwar, Karachi, Karachi City, Sindh 75600</p><br>
+                    <address>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.1691322307215!2d67.035556!3d24.823889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33db742497f2d%3A0x7cb2d6263f5475e2!2sOcean%20Towers%2C%20Block%209%20Clifton%2C%20Karachi%2C%20Karachi%20City%2C%20Sindh%2075600!5e0!3m2!1sen!2s!4v1672439776284!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </address>
+                    <div class="popup-close-btn">&times;</div>
+                </div>
+                    <a href="tel:0300868989790"><i class="fab fa-whatsapp"></i></a>  
+                    <a href="https://www.youtube.com/watch?v=ARr1NvMmC_8" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="mailto:rizwanamdansari@gmail.com"><i class="fab fa-twitter"></i></a> 
+               </div>
+              </aside>
+
+        </header>
+
+             <!-- ---------------------------------gallery------------------------------ -->
+
+             <figcaption>  
+
+            <div class="gallery">
+                <h2>ANSARI <i class="fa-brands fa-sketch"></i>Jewellers Designs Image Gallery</h2>
+                <h3>Gold Jewelries</h3>
+                <div class="img-area">
+                    <a href="goldbangle.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/goldbangle1.jpg" alt=""></div></a>
+                    <a href="goldset.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/box1.jpg" alt=""></div></a>
+                    <div class="single-img"><img src="image/goldbraceletpics1.jpg" alt="" onclick="alert('This Design Coming Soon');">></div>
+                    <a href="goldset.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/goldset1.png" alt=""></div></a>
+                    <a href="goldset.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/goldset2.jpg" alt=""></div></a>
+                    <a href="goldbangle.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/goldbangle3.jpg" alt=""></div></a>
+                    <a href="goldearrings.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/goldrtops1.jpg" alt=""></div></a>
+                    <a href="goldset.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/goldset3.jpg" alt=""></div></a>
+                    <a href="goldbangle.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/goldbangle2.jpg" alt=""></div></a>
+                    <a href="goldearrings.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/goldrtops2.jpg" alt=""></div></a>
+                    <a href="goldset.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/goldset4.png" alt=""></div></a>
+                    <div class="single-img"><img src="image/goldbracelet2.jpg" alt="" onclick="alert('This Design Coming Soon');">></div>
+                </div>
+            </div>
+
+            <div class="gallery">
+                <h3>Copper Gold Jewelries</h3>
+                <div class="img-area">
+                    <a href="coopergoldbangle.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/copperbange1.jpg" alt=""></div></a>
+                    <div class="single-img"><img src="image/coppergoldearrings.png" alt="" onclick="alert('This Design Coming Soon');">></div>
+                    
+                    <a href="coopergoldrings.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/coppergoldring1.png" alt=""></div></a>
+                    <a href="coopergoldrings.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/coppergoldring3.jpg" alt=""></div></a>
+                    <div class="single-img"><img src="image/copperbracelet1.jpg" alt="" onclick="alert('This Design Coming Soon');">></div>
+            
+                    <a href="coopergoldbangle.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/copperbange2.jpg" alt=""></div></a>
+                    <a href="coopergoldrings.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/copperring1.jpg" alt=""></div></a>
+                    <div class="single-img"><img src="image/copperbracelet3.jpeg" alt="" onclick="alert('This Design Coming Soon');">></div>
+            
+                    <a href="coopergoldbangle.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/copperbange3.jpg" alt=""></div></a>
+                    <a href="coopergoldrings.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/coopergoldring11.png" alt=""></div></a>
+                    <a href="coopergoldrings.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/coopergoldring12.png" alt=""></div></a>
+                </div>
+            </div>
+
+            <div class="gallery">
+                <h3>Diamand Jewelries</h3>
+                <div class="img-area">
+                    <a href="diamondring.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/diamandring1.jpg" alt=""></div></a>
+                    <a href="diamondset.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/diamandset1.webp" alt=""></div></a>
+                    <a href="diamondring.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/diamandring2.jpg" alt=""></div></a>
+                    <div class="single-img"><img src="image/diamondbracelet1.jpg" alt="" onclick="alert('This Design Coming Soon');">></div>
+                    
+                    <a href="diamondset.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/diamondset2.jpg" alt=""></div></a>
+                    <a href="diamondring.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/diamandring4.jpg" alt=""></div></a>
+                    <a href="diamondring.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/diamandring6.jpg" alt=""></div></a>
+                    <a href="diamondset.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/diamondset6.jpg" alt=""></div></a>
+                    <a href="diamondset.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/diamondset7.jpg" alt=""></div></a>
+                    <a href="diamondset.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/diamondset3.jpg" alt=""></div></a>
+                    <a href="diamondset.html" target="_blank" rel="noopener noreferrer"><div class="single-img"><img src="image/diamondset4.jpg" alt=""></div></a>
+                </div>
+            </div>
+
+      </figcaption>
+
+            <!-- ----------------------------------------------------------------------- -->
+
+      <footer>
+        <marquee behavior="scroll" direction="left">Gold Rate In Pakistan 1 Gram Rs. 15904, 1 Tola Rs. 185500.</marquee>
+
+        <div class="footer">
+            <div class="col">
+                <h3>ANSARI <i class="fa-brands fa-sketch"></i>Jewellers <div class="underline"><span></span></div> </h3>
+                <p>Real & Best Jewelry</p>
+            </div>
+
+            <div class="col">
+               
+                <ul>
+                    <h3>Link <div class="underline"><span></span></div> </h3>
+                    <li><a href="demowebsite.html" target="_blank" rel="noopener noreferrer">Home</a></li>
+                    <li><a href="aboutus.html" target="_blank" rel="noopener noreferrer">About</a></li>
+                    <li><a href="faq.html" target="_blank" rel="noopener noreferrer">Gallery</a></li>
+                    <li><a href="faq.html" target="_blank" rel="noopener noreferrer">FAQ</a></li>
+                    <li><a href="privacypolicy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+                    <li><a href="terms&conditions.html" target="_blank" rel="noopener noreferrer">Tream & Condition</a></li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3>Office <div class="underline"><span></span></div> </h3>
+                <p>Ocean Mall</p>
+                <p>Clifton, Near 2 Talwar, Karachi,</p>
+                <p>Karachi City, Sindh 75600</p>
+                <p class="email-id">rizwanmdansari@gmail.com</p>
+                <p>(021) 31234567</p>
+            </div>
+
+            <div class="col">
+                <h3>Feed Back <div class="underline"><span></span></div> </h3>
+                <form action="mailto:rizwanadmansari@gmail.com">
+                    <i class="far fa-envelope"></i>
+                    <input type="email" placeholder="Enter your email id" required>
+                    <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                </form>
+
+                <div class="time">
+                    <div class="hms"></div>
+                    <div class="ampm"></div>
+                    <div class="date"></div>
+                </div>
+        
+                </div>
+        </div>
+        
+        <hr>
+        <p class="copyright">RIZWANA ANSARI@&copy;2022</p>
+
+      </footer>
+
+      </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+        
+
+                       <script src="slick.min.js"></script>
+
+        <script>
+
+             // --------------------password-eye----------------------
+
+        var state= false;
+        function toggle(){
+            if(state){
+                document.getElementById("password").
+                setAttribute("type","password");
+                state = false;
+            }
+            else{
+                document.getElementById("password").
+                setAttribute("type","text");
+                state = true;
+            }
+        } 
+
+              //   ---------------------asiad-location-map------------------------
+
+              var openPopupBtn = document.querySelector("#open-popup-btn");
+            var closePopupBtn = document.querySelector(".popup-close-btn");
+
+            openPopupBtn.addEventListener("click",function(){
+            document.body.classList.add("popup-active");
+            });
+
+            closePopupBtn.addEventListener("click",function(){
+            document.body.classList.remove("popup-active");
+            });
+
+            // ------------------------time-Date-Day-year---------------------------
+
+            function updateTime(){
+                var dateInfo = new Date();
+                var hr,
+                _min = (dateInfo.getMinutes() < 10) ? "0" + dateInfo.getMinutes() : dateInfo.getMinutes()
+                    sec = (dateInfo.getSeconds() < 10) ? "0" + dateInfo.getSeconds() : dateInfo.getSeconds()
+                    ampm = (dateInfo.getHours() >= 12) ? "PM" : "AM";
+                    if(dateInfo.getHours() == 0){
+                        hr =12;
+                    } else if (dateInfo.getHours() > 12){
+                        hr = dateInfo.getHours() - 12;
+                    }else{
+                        hr = dateInfo.getHours();
+                    }
+
+                    var currentTime = hr + ":" + _min + ":" + sec;
+
+                    document.getElementsByClassName("hms")[0].innerHTML = currentTime;
+                    document.getElementsByClassName("ampm")[0].innerHTML = ampm;
+
+                    var dow = [
+                        "Sunday",
+                        "Monday",
+                        "Tuesday",
+                        "Wenesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday"
+                    ],
+
+                    month = [
+                        "January",
+                        "February",
+                        "March",
+                        "April",
+                        "May",
+                        "June",
+                        "July",
+                        "Augest",
+                        "September",
+                        "October",
+                        "November",
+                        "December"
+                    ],
+                    day = dateInfo.getDate();
+
+                    var currentDate = dow[dateInfo.getDay()] + ", " + month[dateInfo.getMonth()] + "" + day;
+
+                    document.getElementsByClassName("date")[0].innerHTML = currentDate;
+
+                };
+
+            updateTime();
+            setInterval(function(){
+                updateTime()
+            }, 1000);
+
+        </script>
+    
+</body>
+</html>
+</body>
+</html>

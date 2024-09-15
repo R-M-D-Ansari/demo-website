@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waves</title>
+    <style>
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.page{
+    background-color: #015871;
+    height: 100vh;
+    /* background: url(image/ocean1.jpg);
+    background-size: cover;
+    background-position: center; */
+}
+
+.ocean { 
+  height: 5%;
+  width:100%;
+  position:absolute;
+  bottom:0;
+  left:0;
+  background: #015871;
+}
+
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0,-25px,0);
+  }
+  50% {
+    transform: translate3d(0,5px,0);
+  }
+}
+
+   /* -------------------------------------------------------------------------- */
+       
+        h2{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 50px;
+        }
+        h2{
+            font-size: 2em;
+            color: #333;
+            font-weight: 500;
+        }
+        .name{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        
+        h2 span{
+            animation: animate 7s linear infinite;
+        }
+        
+        @keyframes animate{
+            10%,100%{
+                color: wheat;
+                box-shadow: none;
+            }
+            100%{
+                color: #333;
+            }
+        }   
+    </style>
+</head>
+<body>
+
+    <div class="page">
+
+        <div class="logo">
+            <h2><span>My First Website</span></h2>
+
+            <h2><span>Design & Coding</span></h2>
+
+            <h2><span>By</span></h2>
+
+            <h2 class="name"><span>RIZWANA MUHAMMAD DAWOOD ANSARI</span></h2>
+        </div>
+
+        <!-- --------------------------------------------------------------------- -->
+
+    <div class="ocean">
+        <div class="wave"></div>
+        <div class="wave"></div>
+      </div>
+    </div>
+</body>
+</html>
